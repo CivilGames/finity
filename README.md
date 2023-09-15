@@ -4,4 +4,4 @@
 
 A GBJam 11 game
 
-[itch.io page](https://jazoja.itch.io/finity)
+[itch.io page](https://civilgames.itch.io/finity)
