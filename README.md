@@ -1,6 +1,6 @@
 # finity
 
-![finity tmp log](assets/finity_log.png)
+![finity tmp logo](assets/finity_logo.png)
 
 A GBJam 11 game
 
