@@ -1,6 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://k757r6ckdva5"]
+[gd_scene load_steps=5 format=3 uid="uid://k757r6ckdva5"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_p21bx"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_xydj6"]
+[ext_resource type="Texture2D" uid="uid://cx5t6jg4swpg1" path="res://assets/textures/screen_test_background.png" id="2_0wb0u"]
+[ext_resource type="FontFile" uid="uid://bhuo4okdbu0bd" path="res://assets/fonts/Early GameBoy.ttf" id="4_rcxwo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b04nk"]
+font = ExtResource("4_rcxwo")
+font_size = 8
+font_color = Color(0.0313726, 0.0941176, 0.12549, 1)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_p21bx")
+script = ExtResource("1_xydj6")
+
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+
+[node name="background" type="TextureRect" parent="Graphics/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0wb0u")
+
+[node name="Label2" type="Label" parent="Graphics/CanvasLayer"]
+offset_top = 119.0
+offset_right = 160.0
+offset_bottom = 145.0
+text = "hallo hallo hallo hal
+lo hallo hallo hallo h
+"
+label_settings = SubResource("LabelSettings_b04nk")
+
+[node name="Label" type="Label" parent="Graphics/CanvasLayer"]
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 144.0
+text = "hallo
+hallo
+hallo
+hallo
+hallo
+hallo
+hallo
+hallo
+hallo
+hallo
+hallo"
+label_settings = SubResource("LabelSettings_b04nk")
