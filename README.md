@@ -1,10 +1,6 @@
-# finity
+![finity tmp logo](assets/textures/finity_logo.png)
 
-![finity tmp logo](assets/finity_logo.png)
-
-A GBJam 11 game
-
-Micro 4X
+A Micro 4X game for GBJam 11
 
 ### Explore 
 The dying universe (for resources)
