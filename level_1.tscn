@@ -1,0 +1,96 @@
+[gd_scene load_steps=18 format=3 uid="uid://mloy8xmb4p4o"]
+
+[ext_resource type="Texture2D" uid="uid://d4algiecjkhb7" path="res://assets/textures/space_tile_active_new.png" id="2_onple"]
+[ext_resource type="Texture2D" uid="uid://defxu5qwp8r47" path="res://assets/textures/space_tile_passive_new.png" id="3_bjo04"]
+[ext_resource type="Texture2D" uid="uid://xyosgc1dmyl5" path="res://assets/textures/space_tile_oor_new.png" id="4_1p2rx"]
+[ext_resource type="Texture2D" uid="uid://2gcr3mdib74m" path="res://assets/textures/space_tile_passive_new2.png" id="4_fj2th"]
+[ext_resource type="Texture2D" uid="uid://ci43l3e1t1648" path="res://assets/textures/space_tile_16x16_active.png" id="5_62qxb"]
+[ext_resource type="Texture2D" uid="uid://b04c0ug06k12j" path="res://assets/textures/space_tile_16x16_oor.png" id="6_gvcwy"]
+[ext_resource type="Texture2D" uid="uid://bo0bkicyl671p" path="res://assets/textures/space_tile_16x16_passive.png" id="7_8cgb1"]
+[ext_resource type="Texture2D" uid="uid://bt86tacanutch" path="res://assets/textures/space_tile_16x16_cursor.png" id="8_x5jec"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nr70"]
+texture = ExtResource("4_1p2rx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qh5k6"]
+texture = ExtResource("3_bjo04")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4umyi"]
+texture = ExtResource("2_onple")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdaiy"]
+texture = ExtResource("4_fj2th")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tl2ws"]
+tile_size = Vector2i(32, 32)
+sources/13 = SubResource("TileSetAtlasSource_7nr70")
+sources/14 = SubResource("TileSetAtlasSource_qh5k6")
+sources/15 = SubResource("TileSetAtlasSource_4umyi")
+sources/16 = SubResource("TileSetAtlasSource_xdaiy")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uvk60"]
+texture = ExtResource("5_62qxb")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a3e5p"]
+texture = ExtResource("6_gvcwy")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6mhq"]
+texture = ExtResource("7_8cgb1")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0s3u5"]
+sources/3 = SubResource("TileSetAtlasSource_uvk60")
+sources/4 = SubResource("TileSetAtlasSource_a3e5p")
+sources/5 = SubResource("TileSetAtlasSource_n6mhq")
+
+[node name="Level1" type="Node2D"]
+
+[node name="32" type="TileMap" parent="."]
+visible = false
+scale = Vector2(1.00975, 1.01331)
+tile_set = SubResource("TileSet_tl2ws")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 13, 0, 1, 13, 0, 2, 16, 0, 3, 13, 0, 4, 13, 0, 5, 13, 0, 65541, 13, 0, 131077, 13, 0, 196613, 13, 0, 196612, 13, 0, 196611, 13, 0, 196610, 13, 0, 196609, 13, 0, 196608, 13, 0, 131072, 13, 0, 196607, 13, 0, 131071, 13, 0, 65536, 13, 0, 65537, 16, 0, 65539, 16, 0, 131075, 13, 0, 131076, 13, 0, 65540, 13, 0, 131073, 13, 0, 65535, 13, 0, -1, 13, 0, -65536, 13, 0, -65535, 13, 0, -65534, 13, 0, -65533, 13, 0, -65532, 13, 0, -65531, 13, 0, 262149, 13, 0, 262148, 13, 0, 262147, 13, 0, 262146, 13, 0, 262145, 13, 0, 262144, 13, 0, 327679, 13, 0, 262143, 13, 0, 131074, 16, 0, 65538, 15, 0)
+
+[node name="focus" type="NinePatchRect" parent="."]
+visible = false
+offset_left = 41.0
+offset_top = 36.0
+offset_right = 52.0
+offset_bottom = 48.0
+texture = ExtResource("2_onple")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+offset_left = 41.0
+offset_top = 48.0
+offset_right = 52.0
+offset_bottom = 59.0
+texture = ExtResource("3_bjo04")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="16" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0s3u5")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 4, 0, 65536, 4, 0, 131072, 4, 0, 196608, 4, 0, 262144, 4, 0, 327680, 4, 0, 393216, 4, 0, 458752, 4, 0, 524288, 4, 0, 589824, 4, 0, 1, 4, 0, 65537, 4, 0, 131073, 4, 0, 196609, 4, 0, 262145, 4, 0, 327681, 4, 0, 393217, 4, 0, 458753, 4, 0, 524289, 4, 0, 589825, 4, 0, 2, 4, 0, 65538, 4, 0, 131074, 4, 0, 196610, 4, 0, 262146, 4, 0, 327682, 4, 0, 393218, 4, 0, 458754, 4, 0, 524290, 4, 0, 589826, 4, 0, 3, 4, 0, 65539, 4, 0, 131075, 4, 0, 196611, 4, 0, 262147, 4, 0, 327683, 4, 0, 393219, 4, 0, 458755, 4, 0, 524291, 4, 0, 589827, 4, 0, 4, 4, 0, 65540, 4, 0, 131076, 4, 0, 196612, 4, 0, 262148, 4, 0, 327684, 4, 0, 393220, 4, 0, 458756, 4, 0, 524292, 4, 0, 589828, 4, 0, 5, 4, 0, 65541, 4, 0, 131077, 4, 0, 196613, 5, 0, 262149, 4, 0, 327685, 4, 0, 393221, 4, 0, 458757, 4, 0, 524293, 4, 0, 589829, 4, 0, 6, 4, 0, 65542, 4, 0, 131078, 5, 0, 196614, 3, 0, 262150, 5, 0, 327686, 4, 0, 393222, 4, 0, 458758, 4, 0, 524294, 4, 0, 589830, 4, 0, 7, 4, 0, 65543, 4, 0, 131079, 4, 0, 196615, 5, 0, 262151, 4, 0, 327687, 4, 0, 393223, 4, 0, 458759, 4, 0, 524295, 4, 0, 589831, 4, 0, 8, 4, 0, 65544, 4, 0, 131080, 4, 0, 196616, 4, 0, 262152, 4, 0, 327688, 4, 0, 393224, 4, 0, 458760, 4, 0, 524296, 4, 0, 589832, 4, 0, 9, 4, 0, 65545, 4, 0, 131081, 4, 0, 196617, 4, 0, 262153, 4, 0, 327689, 4, 0, 393225, 4, 0, 458761, 4, 0, 524297, 4, 0, 589833, 4, 0, 10, 4, 0, 65546, 4, 0, 131082, 4, 0, 196618, 4, 0, 262154, 4, 0, 327690, 4, 0, 393226, 4, 0, 458762, 4, 0, 524298, 4, 0, 589834, 4, 0, 11, 4, 0, 65547, 4, 0, 131083, 4, 0, 196619, 4, 0, 262155, 4, 0, 327691, 4, 0, 393227, 4, 0, 458763, 4, 0, 524299, 4, 0, 589835, 4, 0)
+
+[node name="SpaceTile16x16Cursor" type="Sprite2D" parent="."]
+position = Vector2(56, 72)
+texture = ExtResource("8_x5jec")
