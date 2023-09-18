@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2n5j6xl44s57"
-path="res://.godot/imported/space_map.png-5c32f9f66f18029f614fb02805ec645e.ctex"
+uid="uid://cc2x8ybtsi75m"
+path="res://.godot/imported/inventory_screen.png-4d99ab5b33501122d4ea978baf064a9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/space_map.png"
-dest_files=["res://.godot/imported/space_map.png-5c32f9f66f18029f614fb02805ec645e.ctex"]
+source_file="res://assets/textures/inventory_screen.png"
+dest_files=["res://.godot/imported/inventory_screen.png-4d99ab5b33501122d4ea978baf064a9a.ctex"]
 
 [params]
 

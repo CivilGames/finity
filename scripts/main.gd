@@ -14,6 +14,3 @@ func dice(rng: RandomNumberGenerator, eyes: int) -> int:
 
 
 # Zone
-zone = {
-	''
-}
