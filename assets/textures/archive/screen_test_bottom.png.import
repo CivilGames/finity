@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cenkrr0tfgg4o"
-path="res://.godot/imported/screen_test_verticat.png-bfd9ec27949af0be031aff78a8bb8184.ctex"
+uid="uid://dgtdxc7wgqvg3"
+path="res://.godot/imported/screen_test_bottom.png-6a89d36f2a5f600f22c7b5d2b39601ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/screen_test_verticat.png"
-dest_files=["res://.godot/imported/screen_test_verticat.png-bfd9ec27949af0be031aff78a8bb8184.ctex"]
+source_file="res://assets/textures/archive/screen_test_bottom.png"
+dest_files=["res://.godot/imported/screen_test_bottom.png-6a89d36f2a5f600f22c7b5d2b39601ea.ctex"]
 
 [params]
 

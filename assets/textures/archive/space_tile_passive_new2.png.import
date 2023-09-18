@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqtru5bdhmcxk"
-path="res://.godot/imported/screen_test_right.png-b85df0ab2974b48df7e8a7f6e6cc839c.ctex"
+uid="uid://2gcr3mdib74m"
+path="res://.godot/imported/space_tile_passive_new2.png-54c6053881d633628cb46ef4e3388293.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/screen_test_right.png"
-dest_files=["res://.godot/imported/screen_test_right.png-b85df0ab2974b48df7e8a7f6e6cc839c.ctex"]
+source_file="res://assets/textures/archive/space_tile_passive_new2.png"
+dest_files=["res://.godot/imported/space_tile_passive_new2.png-54c6053881d633628cb46ef4e3388293.ctex"]
 
 [params]
 

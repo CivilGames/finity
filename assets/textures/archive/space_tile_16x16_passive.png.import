@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xyosgc1dmyl5"
-path="res://.godot/imported/space_tile_oor_new.png-4965507cc7f5a5ba749d2e538b0580bd.ctex"
+uid="uid://bo0bkicyl671p"
+path="res://.godot/imported/space_tile_16x16_passive.png-5267d90603aa30c9a949e3f969df0537.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/space_tile_oor_new.png"
-dest_files=["res://.godot/imported/space_tile_oor_new.png-4965507cc7f5a5ba749d2e538b0580bd.ctex"]
+source_file="res://assets/textures/archive/space_tile_16x16_passive.png"
+dest_files=["res://.godot/imported/space_tile_16x16_passive.png-5267d90603aa30c9a949e3f969df0537.ctex"]
 
 [params]
 

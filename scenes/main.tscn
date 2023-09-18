@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://k757r6ckdva5"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_xydj6"]
-[ext_resource type="Texture2D" uid="uid://cx5t6jg4swpg1" path="res://assets/textures/screen_test_background.png" id="2_0wb0u"]
+[ext_resource type="Texture2D" uid="uid://cx5t6jg4swpg1" path="res://assets/textures/archive/screen_test_background.png" id="2_pr1kk"]
 [ext_resource type="FontFile" uid="uid://bhuo4okdbu0bd" path="res://assets/fonts/Early GameBoy.ttf" id="4_rcxwo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b04nk"]
@@ -19,7 +19,7 @@ script = ExtResource("1_xydj6")
 [node name="background" type="TextureRect" parent="Graphics/CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_0wb0u")
+texture = ExtResource("2_pr1kk")
 
 [node name="Label2" type="Label" parent="Graphics/CanvasLayer"]
 offset_top = 119.0

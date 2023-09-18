@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b04c0ug06k12j"
-path="res://.godot/imported/space_tile_16x16_oor.png-c4e86adf2a94b9d053db9a9b43616a3e.ctex"
+uid="uid://bt86tacanutch"
+path="res://.godot/imported/space_tile_16x16_cursor.png-879694eac7f39ffc8f2dc65768c90d8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/space_tile_16x16_oor.png"
-dest_files=["res://.godot/imported/space_tile_16x16_oor.png-c4e86adf2a94b9d053db9a9b43616a3e.ctex"]
+source_file="res://assets/textures/archive/space_tile_16x16_cursor.png"
+dest_files=["res://.godot/imported/space_tile_16x16_cursor.png-879694eac7f39ffc8f2dc65768c90d8b.ctex"]
 
 [params]
 
