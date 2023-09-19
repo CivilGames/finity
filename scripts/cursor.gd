@@ -4,8 +4,6 @@ extends Node2D
 @onready var full_menu = $HUD/FullMenu
 var current_position: Array = [0,0]
 
-var number_font = BitMapFont.new()
-
 
 func _ready():
 	_animated_cursor.play()

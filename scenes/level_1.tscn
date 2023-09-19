@@ -1,13 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://mloy8xmb4p4o"]
+[gd_scene load_steps=22 format=3 uid="uid://mloy8xmb4p4o"]
 
 [ext_resource type="Texture2D" uid="uid://ds2xyaeoripds" path="res://assets/textures/bg3.png" id="2_dv7pg"]
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="3_otiiy"]
 [ext_resource type="Texture2D" uid="uid://c7kpmhbopwnuw" path="res://assets/textures/craft2.png" id="4_0e5w6"]
 [ext_resource type="Texture2D" uid="uid://sgd8mdmr8xoq" path="res://assets/textures/HUD3.png" id="4_a56ao"]
-[ext_resource type="Texture2D" uid="uid://d1xwnwpff0xej" path="res://scenes/background_large.png" id="4_gb5c2"]
 [ext_resource type="Texture2D" uid="uid://c2n5j6xl44s57" path="res://assets/textures/space_map.png" id="5_6wxgb"]
 [ext_resource type="Texture2D" uid="uid://bm6la4rt2wrvn" path="res://assets/textures/inventory_rect.png" id="5_t3fli"]
-[ext_resource type="FontFile" uid="uid://cmia0up6iqi6v" path="res://assets/fonts/nmbrs.ttf" id="6_ofq3b"]
+[ext_resource type="Texture2D" uid="uid://dvymrfw8tmtdd" path="res://assets/textures/slots.png" id="7_03og4"]
+[ext_resource type="Texture2D" uid="uid://d1xwnwpff0xej" path="res://assets/textures/background_large.png" id="7_rkjo1"]
 [ext_resource type="Texture2D" uid="uid://d3rbc6hxlb2vg" path="res://assets/textures/nmbrs.png" id="9_ya4d7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0to65"]
@@ -51,11 +51,9 @@ animations = [{
 atlas = ExtResource("5_6wxgb")
 region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="LabelSettings" id="LabelSettings_rfr81"]
-line_spacing = 1.0
-font = ExtResource("6_ofq3b")
-font_size = 8
-font_color = Color(1, 0.0941176, 0.12549, 1)
+[sub_resource type="Theme" id="Theme_6aiq1"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5udix"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8dcp"]
 bg_color = Color(0.03125, 0.09375, 0.125, 1)
@@ -143,7 +141,6 @@ offset_bottom = 144.0
 texture = ExtResource("4_a56ao")
 
 [node name="FullMenu" type="NinePatchRect" parent="cursor/HUD"]
-visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -155,18 +152,28 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="Label" type="Label" parent="cursor"]
-z_index = 1
-offset_left = 56.0
-offset_top = 94.0
-offset_right = 136.0
-offset_bottom = 127.0
-text = "1234afaefaefawd`1212134576
-wqeqwe"
-label_settings = SubResource("LabelSettings_rfr81")
-autowrap_mode = 3
+[node name="slots" type="Control" parent="cursor/HUD/FullMenu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_6aiq1")
 
-[node name="ProgressBar" type="ProgressBar" parent="cursor"]
+[node name="Slots" type="Sprite2D" parent="cursor/HUD/FullMenu"]
+texture = ExtResource("7_03og4")
+centered = false
+offset = Vector2(80, 14)
+
+[node name="Button" type="Button" parent="cursor/HUD"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 88.0
+offset_right = 146.0
+offset_bottom = 104.0
+button_mask = 0
+button_group = SubResource("ButtonGroup_5udix")
+
+[node name="ProgressBar" type="ProgressBar" parent="cursor/HUD"]
+layout_mode = 0
 offset_left = 151.0
 offset_top = 6.0
 offset_right = 156.0
@@ -177,18 +184,21 @@ value = 75.0
 fill_mode = 3
 show_percentage = false
 
-[node name="nmbrs" type="TileMap" parent="cursor"]
+[node name="nmbrs" type="TileMap" parent="cursor/HUD/ProgressBar"]
+position = Vector2(-151, -6)
 tile_set = SubResource("TileSet_g7kyw")
 format = 2
 layer_0/tile_data = PackedInt32Array(1245222, 0, 0, 1310758, 524288, 0, 1376294, 327680, 0)
 
-[node name="bg" type="TextureRect" parent="."]
+[node name="bg" type="TextureRect" parent="cursor"]
+visible = false
 z_index = -2
-offset_left = -355.0
-offset_top = -254.0
-offset_right = 285.0
-offset_bottom = 322.0
-texture = ExtResource("4_gb5c2")
+z_as_relative = false
+offset_left = -365.0
+offset_top = -267.0
+offset_right = 275.0
+offset_bottom = 309.0
+texture = ExtResource("7_rkjo1")
 
 [node name="Craft" type="Sprite2D" parent="."]
 z_index = -1
