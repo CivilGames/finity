@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://mloy8xmb4p4o"]
+[gd_scene load_steps=24 format=3 uid="uid://cm7yvnmuikpu4"]
 
 [ext_resource type="Texture2D" uid="uid://ds2xyaeoripds" path="res://assets/textures/bg3.png" id="2_dv7pg"]
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="3_otiiy"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm6la4rt2wrvn" path="res://assets/textures/inventory_rect.png" id="5_t3fli"]
 [ext_resource type="Texture2D" uid="uid://dvymrfw8tmtdd" path="res://assets/textures/slots.png" id="7_03og4"]
 [ext_resource type="Texture2D" uid="uid://d1xwnwpff0xej" path="res://assets/textures/background_large.png" id="7_rkjo1"]
+[ext_resource type="FontFile" uid="uid://bstpr5enrywcg" path="res://assets/fonts/nmbrs.ttf" id="8_fideo"]
 [ext_resource type="Texture2D" uid="uid://d3rbc6hxlb2vg" path="res://assets/textures/nmbrs.png" id="9_ya4d7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0to65"]
@@ -90,6 +91,10 @@ texture_region_size = Vector2i(4, 6)
 tile_size = Vector2i(4, 6)
 sources/0 = SubResource("TileSetAtlasSource_71h7h")
 
+[sub_resource type="LabelSettings" id="LabelSettings_u1yn1"]
+font = ExtResource("8_fideo")
+font_color = Color(0.03125, 0.09375, 0.125, 1)
+
 [node name="Level1" type="Node2D"]
 
 [node name="scan" type="TileMap" parent="."]
@@ -141,6 +146,7 @@ offset_bottom = 144.0
 texture = ExtResource("4_a56ao")
 
 [node name="FullMenu" type="NinePatchRect" parent="cursor/HUD"]
+visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
@@ -153,17 +159,20 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="slots" type="Control" parent="cursor/HUD/FullMenu"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_6aiq1")
 
 [node name="Slots" type="Sprite2D" parent="cursor/HUD/FullMenu"]
+visible = false
 texture = ExtResource("7_03og4")
 centered = false
 offset = Vector2(80, 14)
 
 [node name="Button" type="Button" parent="cursor/HUD"]
+visible = false
 layout_mode = 0
 offset_left = 9.0
 offset_top = 88.0
@@ -190,18 +199,26 @@ tile_set = SubResource("TileSet_g7kyw")
 format = 2
 layer_0/tile_data = PackedInt32Array(1245222, 0, 0, 1310758, 524288, 0, 1376294, 327680, 0)
 
-[node name="bg" type="TextureRect" parent="cursor"]
-visible = false
-z_index = -2
-z_as_relative = false
-offset_left = -365.0
-offset_top = -267.0
-offset_right = 275.0
-offset_bottom = 309.0
-texture = ExtResource("7_rkjo1")
+[node name="Label" type="Label" parent="cursor/HUD"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 104.0
+offset_right = 94.0
+offset_bottom = 124.0
+text = "1234567890"
+label_settings = SubResource("LabelSettings_u1yn1")
 
 [node name="Craft" type="Sprite2D" parent="."]
 z_index = -1
 texture = ExtResource("4_0e5w6")
 centered = false
 offset = Vector2(4, 4)
+
+[node name="bg" type="TextureRect" parent="."]
+z_index = -2
+z_as_relative = false
+offset_left = -350.0
+offset_top = -273.0
+offset_right = 290.0
+offset_bottom = 303.0
+texture = ExtResource("7_rkjo1")
