@@ -1,15 +1,29 @@
-[gd_scene load_steps=24 format=3 uid="uid://cm7yvnmuikpu4"]
+[gd_scene load_steps=16 format=3 uid="uid://mloy8xmb4p4o"]
 
-[ext_resource type="Texture2D" uid="uid://ds2xyaeoripds" path="res://assets/textures/bg3.png" id="2_dv7pg"]
 [ext_resource type="Script" path="res://scripts/cursor.gd" id="3_otiiy"]
 [ext_resource type="Texture2D" uid="uid://c7kpmhbopwnuw" path="res://assets/textures/craft2.png" id="4_0e5w6"]
+[ext_resource type="Theme" uid="uid://dgiuf5vywebvp" path="res://assets/themes/ui/ui_theme.tres" id="4_6yddb"]
 [ext_resource type="Texture2D" uid="uid://sgd8mdmr8xoq" path="res://assets/textures/HUD3.png" id="4_a56ao"]
 [ext_resource type="Texture2D" uid="uid://c2n5j6xl44s57" path="res://assets/textures/space_map.png" id="5_6wxgb"]
 [ext_resource type="Texture2D" uid="uid://bm6la4rt2wrvn" path="res://assets/textures/inventory_rect.png" id="5_t3fli"]
-[ext_resource type="Texture2D" uid="uid://dvymrfw8tmtdd" path="res://assets/textures/slots.png" id="7_03og4"]
 [ext_resource type="Texture2D" uid="uid://d1xwnwpff0xej" path="res://assets/textures/background_large.png" id="7_rkjo1"]
-[ext_resource type="FontFile" uid="uid://bstpr5enrywcg" path="res://assets/fonts/nmbrs.ttf" id="8_fideo"]
-[ext_resource type="Texture2D" uid="uid://d3rbc6hxlb2vg" path="res://assets/textures/nmbrs.png" id="9_ya4d7"]
+[ext_resource type="FontFile" uid="uid://q1xmpmm4d56y" path="res://assets/fonts/nmbrs2.ttf" id="7_us1ue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8dcp"]
+bg_color = Color(0.03125, 0.09375, 0.125, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.53125, 0.75, 0.4375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxa2a"]
+bg_color = Color(0.53125, 0.75, 0.4375, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.875, 0.96875, 0.8125, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0to65"]
 texture = ExtResource("5_6wxgb")
@@ -48,177 +62,91 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ix1kk"]
-atlas = ExtResource("5_6wxgb")
-region = Rect2(32, 32, 16, 16)
-
-[sub_resource type="Theme" id="Theme_6aiq1"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_5udix"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8dcp"]
-bg_color = Color(0.03125, 0.09375, 0.125, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.53125, 0.75, 0.4375, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxa2a"]
-bg_color = Color(0.53125, 0.75, 0.4375, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.875, 0.96875, 0.8125, 1)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71h7h"]
-texture = ExtResource("9_ya4d7")
-margins = Vector2i(0, 1)
-texture_region_size = Vector2i(4, 6)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_g7kyw"]
-tile_size = Vector2i(4, 6)
-sources/0 = SubResource("TileSetAtlasSource_71h7h")
-
-[sub_resource type="LabelSettings" id="LabelSettings_u1yn1"]
-font = ExtResource("8_fideo")
-font_color = Color(0.03125, 0.09375, 0.125, 1)
-
 [node name="Level1" type="Node2D"]
 
-[node name="scan" type="TileMap" parent="."]
-visible = false
-tile_set = SubResource("TileSet_0s3u5")
-format = 2
-layer_0/tile_data = PackedInt32Array(196611, 131075, 0, 131076, 131075, 0, 196612, 3, 1, 262148, 131075, 0, 196613, 131075, 0, 196615, 65539, 1)
+[node name="Space" type="Node" parent="."]
 
-[node name="background" type="TileMap" parent="."]
-visible = false
-z_index = -2
-tile_set = SubResource("TileSet_0s3u5")
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 3, 0, 65536, 3, 0, 131072, 3, 0, 196608, 3, 0, 262144, 3, 0, 327680, 3, 0, 393216, 3, 0, 458752, 3, 0, 524288, 3, 0, 1, 3, 0, 65537, 3, 0, 131073, 3, 0, 196609, 3, 0, 262145, 3, 0, 327681, 3, 0, 393217, 3, 0, 458753, 3, 0, 524289, 3, 0, 2, 3, 0, 65538, 3, 0, 131074, 3, 0, 196610, 3, 0, 262146, 3, 0, 327682, 3, 0, 393218, 3, 0, 458754, 3, 0, 524290, 3, 0, 3, 3, 0, 65539, 3, 0, 131075, 3, 0, 196611, 3, 0, 262147, 3, 0, 327683, 3, 0, 393219, 3, 0, 458755, 3, 0, 524291, 3, 0, 4, 3, 0, 65540, 3, 0, 131076, 3, 0, 196612, 3, 0, 262148, 3, 0, 327684, 3, 0, 393220, 3, 0, 458756, 3, 0, 524292, 3, 0, 5, 3, 0, 65541, 3, 0, 131077, 3, 0, 196613, 3, 0, 262149, 3, 0, 327685, 3, 0, 393221, 3, 0, 458757, 3, 0, 524293, 3, 0, 6, 3, 0, 65542, 3, 0, 131078, 3, 0, 196614, 3, 0, 262150, 3, 0, 327686, 3, 0, 393222, 3, 0, 458758, 3, 0, 524294, 3, 0, 7, 3, 0, 65543, 3, 0, 131079, 3, 0, 196615, 3, 0, 262151, 3, 0, 327687, 3, 0, 393223, 3, 0, 458759, 3, 0, 524295, 3, 0, 8, 3, 0, 65544, 3, 0, 131080, 3, 0, 196616, 3, 0, 262152, 3, 0, 327688, 3, 0, 393224, 3, 0, 458760, 3, 0, 524296, 3, 0, 9, 3, 0, 65545, 3, 0, 131081, 3, 0, 196617, 3, 0, 262153, 3, 0, 327689, 3, 0, 393225, 3, 0, 458761, 3, 0, 524297, 3, 0)
+[node name="Node2D" type="Node2D" parent="Space"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-z_index = -2
-offset_right = 160.0
-offset_bottom = 144.0
-texture = ExtResource("2_dv7pg")
-
-[node name="cursor" type="Node2D" parent="."]
-script = ExtResource("3_otiiy")
-
-[node name="CursorAnimation" type="AnimatedSprite2D" parent="cursor"]
-sprite_frames = SubResource("SpriteFrames_ilyho")
-frame_progress = 0.000454698
-offset = Vector2(76, 44)
-
-[node name="Sprite2D" type="Sprite2D" parent="cursor"]
-visible = false
-texture = SubResource("AtlasTexture_ix1kk")
-offset = Vector2(76, 44)
-
-[node name="Camera2D" type="Camera2D" parent="cursor"]
-offset = Vector2(80, 72)
-
-[node name="coords" type="TileMap" parent="cursor"]
-z_index = -1
-position = Vector2(4, 4)
-tile_set = SubResource("TileSet_0s3u5")
-format = 2
-layer_0/tile_data = PackedInt32Array(65536, 65539, 0, 131072, 65539, 0, 196608, 65539, 0, 262144, 65539, 0, 327680, 65539, 0, 393216, 65539, 0, 458752, 65539, 0, 524288, 65539, 0, 1, 65539, 0, 65537, 65539, 0, 131073, 65539, 0, 196609, 65539, 0, 262145, 65539, 0, 327681, 65539, 0, 393217, 65539, 0, 458753, 65539, 0, 524289, 65539, 0, 2, 65539, 0, 65538, 65539, 0, 131074, 65539, 0, 196610, 65539, 0, 262146, 65539, 0, 327682, 65539, 0, 393218, 65539, 0, 458754, 65539, 0, 524290, 65539, 0, 3, 65539, 0, 65539, 65539, 0, 131075, 65539, 0, 196611, 65539, 0, 262147, 65539, 0, 327683, 65539, 0, 393219, 65539, 0, 458755, 65539, 0, 524291, 65539, 0, 4, 65539, 0, 65540, 65539, 0, 131076, 65539, 0, 196612, 65539, 0, 262148, 65539, 0, 327684, 65539, 0, 393220, 65539, 0, 458756, 65539, 0, 524292, 65539, 0, 5, 65539, 0, 65541, 65539, 0, 131077, 65539, 0, 196613, 65539, 0, 262149, 65539, 0, 327685, 65539, 0, 393221, 65539, 0, 458757, 65539, 0, 524293, 65539, 0, 6, 65539, 0, 65542, 65539, 0, 131078, 65539, 0, 196614, 65539, 0, 262150, 65539, 0, 327686, 65539, 0, 393222, 65539, 0, 458758, 65539, 0, 524294, 65539, 0, 7, 65539, 0, 65543, 65539, 0, 131079, 65539, 0, 196615, 65539, 0, 262151, 65539, 0, 327687, 65539, 0, 393223, 65539, 0, 458759, 65539, 0, 524295, 65539, 0, 8, 65539, 0, 65544, 65539, 0, 131080, 65539, 0, 196616, 65539, 0, 262152, 65539, 0, 327688, 65539, 0, 393224, 65539, 0, 458760, 65539, 0, 524296, 65539, 0, 9, 65539, 0, 65545, 65539, 0, 131081, 65539, 0, 196617, 65539, 0, 262153, 65539, 0, 327689, 65539, 0, 393225, 65539, 0, 458761, 65539, 0, 524297, 65539, 0, 0, 65539, 0, 65535, 65539, 0, 131071, 65539, 0, 196607, 65539, 0, -1, 65539, 0, -65536, 65539, 0, -65535, 65539, 0, -65534, 65539, 0, -65533, 65539, 0, -65532, 65539, 0, -65531, 65539, 0, -65530, 65539, 0, -65529, 65539, 0, -65528, 65539, 0, -65527, 65539, 0, 262143, 65539, 0, 327679, 65539, 0, 393215, 65539, 0, 458751, 65539, 0, 524287, 65539, 0, 589823, 65539, 0)
-
-[node name="HUD" type="TextureRect" parent="cursor"]
-offset_right = 160.0
-offset_bottom = 144.0
-texture = ExtResource("4_a56ao")
-
-[node name="FullMenu" type="NinePatchRect" parent="cursor/HUD"]
-visible = false
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 150.0
-offset_bottom = 141.0
-texture = ExtResource("5_t3fli")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-
-[node name="slots" type="Control" parent="cursor/HUD/FullMenu"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = SubResource("Theme_6aiq1")
-
-[node name="Slots" type="Sprite2D" parent="cursor/HUD/FullMenu"]
-visible = false
-texture = ExtResource("7_03og4")
-centered = false
-offset = Vector2(80, 14)
-
-[node name="Button" type="Button" parent="cursor/HUD"]
-visible = false
-layout_mode = 0
-offset_left = 9.0
-offset_top = 88.0
-offset_right = 146.0
-offset_bottom = 104.0
-button_mask = 0
-button_group = SubResource("ButtonGroup_5udix")
-
-[node name="ProgressBar" type="ProgressBar" parent="cursor/HUD"]
-layout_mode = 0
-offset_left = 151.0
-offset_top = 6.0
-offset_right = 156.0
-offset_bottom = 139.0
-theme_override_styles/background = SubResource("StyleBoxFlat_u8dcp")
-theme_override_styles/fill = SubResource("StyleBoxFlat_rxa2a")
-value = 75.0
-fill_mode = 3
-show_percentage = false
-
-[node name="nmbrs" type="TileMap" parent="cursor/HUD/ProgressBar"]
-position = Vector2(-151, -6)
-tile_set = SubResource("TileSet_g7kyw")
-format = 2
-layer_0/tile_data = PackedInt32Array(1245222, 0, 0, 1310758, 524288, 0, 1376294, 327680, 0)
-
-[node name="Label" type="Label" parent="cursor/HUD"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 104.0
-offset_right = 94.0
-offset_bottom = 124.0
-text = "1234567890"
-label_settings = SubResource("LabelSettings_u1yn1")
-
-[node name="Craft" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("4_0e5w6")
-centered = false
-offset = Vector2(4, 4)
-
-[node name="bg" type="TextureRect" parent="."]
-z_index = -2
+[node name="bg" type="TextureRect" parent="Space/Node2D"]
+z_index = -100
 z_as_relative = false
 offset_left = -350.0
 offset_top = -273.0
 offset_right = 290.0
 offset_bottom = 303.0
 texture = ExtResource("7_rkjo1")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="HUDCamera" type="Camera2D" parent="UI"]
+unique_name_in_owner = true
+offset = Vector2(80, 72)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI/HUDCamera"]
+
+[node name="HUD" type="TextureRect" parent="UI/HUDCamera/CanvasLayer"]
+z_index = 100
+offset_right = 160.0
+offset_bottom = 144.0
+theme = ExtResource("4_6yddb")
+texture = ExtResource("4_a56ao")
+
+[node name="FullMenu" type="NinePatchRect" parent="UI/HUDCamera/CanvasLayer/HUD"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 150.0
+offset_bottom = 142.0
+texture = ExtResource("5_t3fli")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/HUDCamera/CanvasLayer/HUD"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 6.0
+offset_right = 156.0
+offset_bottom = 139.0
+theme_override_fonts/font = ExtResource("7_us1ue")
+theme_override_styles/background = SubResource("StyleBoxFlat_u8dcp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rxa2a")
+value = 74.51
+fill_mode = 3
+show_percentage = false
+
+[node name="Button" type="Button" parent="UI/HUDCamera/CanvasLayer/HUD"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 90.0
+offset_right = 144.0
+offset_bottom = 112.0
+text = "SCAN"
+
+[node name="coords" type="TileMap" parent="UI/HUDCamera/CanvasLayer/HUD"]
+z_index = -1
+position = Vector2(4, 4)
+tile_set = SubResource("TileSet_0s3u5")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 65539, 0, 131072, 65539, 0, 196608, 65539, 0, 262144, 65539, 0, 327680, 65539, 0, 393216, 65539, 0, 458752, 65539, 0, 524288, 65539, 0, 1, 65539, 0, 65537, 65539, 0, 131073, 65539, 0, 196609, 65539, 0, 262145, 65539, 0, 327681, 65539, 0, 393217, 65539, 0, 458753, 65539, 0, 524289, 65539, 0, 2, 65539, 0, 65538, 65539, 0, 131074, 65539, 0, 196610, 65539, 0, 262146, 65539, 0, 327682, 65539, 0, 393218, 65539, 0, 458754, 65539, 0, 524290, 65539, 0, 3, 65539, 0, 65539, 65539, 0, 131075, 65539, 0, 196611, 65539, 0, 262147, 65539, 0, 327683, 65539, 0, 393219, 65539, 0, 458755, 65539, 0, 524291, 65539, 0, 4, 65539, 0, 65540, 65539, 0, 131076, 65539, 0, 196612, 65539, 0, 262148, 65539, 0, 327684, 65539, 0, 393220, 65539, 0, 458756, 65539, 0, 524292, 65539, 0, 5, 65539, 0, 65541, 65539, 0, 131077, 65539, 0, 196613, 65539, 0, 262149, 65539, 0, 327685, 65539, 0, 393221, 65539, 0, 458757, 65539, 0, 524293, 65539, 0, 6, 65539, 0, 65542, 65539, 0, 131078, 65539, 0, 196614, 65539, 0, 262150, 65539, 0, 327686, 65539, 0, 393222, 65539, 0, 458758, 65539, 0, 524294, 65539, 0, 7, 65539, 0, 65543, 65539, 0, 131079, 65539, 0, 196615, 65539, 0, 262151, 65539, 0, 327687, 65539, 0, 393223, 65539, 0, 458759, 65539, 0, 524295, 65539, 0, 8, 65539, 0, 65544, 65539, 0, 131080, 65539, 0, 196616, 65539, 0, 262152, 65539, 0, 327688, 65539, 0, 393224, 65539, 0, 458760, 65539, 0, 524296, 65539, 0, 9, 65539, 0, 65545, 65539, 0, 131081, 65539, 0, 196617, 65539, 0, 262153, 65539, 0, 327689, 65539, 0, 393225, 65539, 0, 458761, 65539, 0, 524297, 65539, 0, 0, 65539, 0, 65535, 65539, 0, 131071, 65539, 0, 196607, 65539, 0, -1, 65539, 0, -65536, 65539, 0, -65535, 65539, 0, -65534, 65539, 0, -65533, 65539, 0, -65532, 65539, 0, -65531, 65539, 0, -65530, 65539, 0, -65529, 65539, 0, -65528, 65539, 0, -65527, 65539, 0, 262143, 65539, 0, 327679, 65539, 0, 393215, 65539, 0, 458751, 65539, 0, 524287, 65539, 0, 589823, 65539, 0)
+
+[node name="Craft" type="Sprite2D" parent="UI/HUDCamera"]
+z_index = -1
+position = Vector2(64, 32)
+texture = ExtResource("4_0e5w6")
+centered = false
+offset = Vector2(4, 4)
+
+[node name="Player" type="Node" parent="."]
+
+[node name="cursor" type="Node2D" parent="Player"]
+script = ExtResource("3_otiiy")
+
+[node name="CursorAnimation" type="AnimatedSprite2D" parent="Player/cursor"]
+sprite_frames = SubResource("SpriteFrames_ilyho")
+frame_progress = 0.000454698
+offset = Vector2(76, 44)
