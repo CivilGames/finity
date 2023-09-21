@@ -27,13 +27,10 @@ script = ExtResource("1_guyhb")
 
 [node name="Map" type="Node2D" parent="."]
 z_index = -100
-position = Vector2(68, 36)
 
 [node name="bg" type="TextureRect" parent="Map"]
-offset_left = -320.0
-offset_top = -288.0
-offset_right = 320.0
-offset_bottom = 288.0
+offset_right = 640.0
+offset_bottom = 576.0
 texture = ExtResource("1_0wnql")
 
 [node name="Fog" type="TileMap" parent="Map"]

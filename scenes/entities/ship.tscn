@@ -24,4 +24,3 @@ script = SubResource("GDScript_0ebks")
 z_index = -1
 texture = ExtResource("1_1h7kb")
 centered = false
-offset = Vector2(4, 4)

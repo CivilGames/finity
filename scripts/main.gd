@@ -3,7 +3,7 @@ extends Node2D
 @onready var cursor = $Cursor
 @onready var cursor_sprite = $Cursor/Sprite
 @onready var hud = $HUD
-@onready var full_menu = $HUD/CanvasLayer/HUD/FullMenu
+@onready var full_menu = $HUD/RootCanvas/HUD/TopCanvas/FullMenu
 @onready var  camera =  %Camera
 @onready var ship = $Ship
 @onready var fog = $Space/Map/Fog

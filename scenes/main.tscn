@@ -22,4 +22,3 @@ script = null
 [node name="Space" parent="." instance=ExtResource("1_fbfk2")]
 
 [node name="Cursor" parent="." instance=ExtResource("5_alqfb")]
-position = Vector2(64, 32)
