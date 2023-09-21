@@ -11,11 +11,9 @@ script = ExtResource("1_xydj6")
 
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
-anchor_mode = 0
+offset = Vector2(0, 16)
 
 [node name="Ship" parent="." instance=ExtResource("3_n3bv8")]
-position = Vector2(64, 32)
-script = null
 
 [node name="HUD" parent="." instance=ExtResource("2_e4hx2")]
 
