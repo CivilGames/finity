@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx5dvhhfe4v4"]
+
+[ext_resource type="Texture2D" uid="uid://c7kpmhbopwnuw" path="res://assets/textures/craft2.png" id="1_1h7kb"]
+
+[sub_resource type="GDScript" id="GDScript_0ebks"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	print(str('ship pos: ', position))
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Ship" type="Node2D"]
+script = SubResource("GDScript_0ebks")
+
+[node name="Ship" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_1h7kb")
+centered = false
+offset = Vector2(4, 4)

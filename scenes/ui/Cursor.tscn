@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddebjwielt3gn"]
+
+[ext_resource type="Script" path="res://scripts/cursor.gd" id="1_g6eoc"]
+[ext_resource type="Texture2D" uid="uid://c2n5j6xl44s57" path="res://assets/textures/space_map.png" id="1_ogqcp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f32jg"]
+atlas = ExtResource("1_ogqcp")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6db2"]
+atlas = ExtResource("1_ogqcp")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ilyho"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f32jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6db2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cursor" type="Node2D"]
+script = ExtResource("1_g6eoc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 32)
+sprite_frames = SubResource("SpriteFrames_ilyho")
+frame_progress = 0.000454698
+centered = false
+offset = Vector2(4, 4)
