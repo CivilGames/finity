@@ -144,6 +144,10 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+focus_neighbor_left = NodePath("ScanButton")
+focus_neighbor_right = NodePath("JumpButton")
+focus_next = NodePath("JumpButton")
+focus_previous = NodePath("ScanButton")
 
 [node name="ScanButton" type="Button" parent="HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl"]
 layout_mode = 0

@@ -6,7 +6,6 @@ extends Node2D
 @onready var system_holder = $Systems
 @onready var system_scene = load('res://scenes/universe/astro_system.tscn')
 
-
 func _set_astro_systems():
 	for i in range(3):
 		var system = system_scene.instantiate()
@@ -14,3 +13,5 @@ func _set_astro_systems():
 
 func _ready():
 	_set_astro_systems()
+
+	

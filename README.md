@@ -1,4 +1,4 @@
-![finity tmp logo](assets/textures/finity_logo.png)
+![finity logo](assets/textures/logo_light_social2.png)
 
 A Micro 4X game for GBJam 11
 
