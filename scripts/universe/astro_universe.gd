@@ -1,16 +1,18 @@
 class_name astro_universe
 extends Node2D
 
-@onready var galaxy_holder = $Galaxies
-@onready var galaxy_scene = load('res://scenes/universe/astro_galaxy.tscn')
 @onready var universe_data = get_node('/root/AstroGenerators')
 
-func _set_astro_galaxies(data):
+@onready var galaxy_holder = $Galaxies
+@onready var galaxy_scene = load('res://scenes/universe/astro_galaxy.tscn')
 
-	for i in len(data['galaxies'][0]):
+
+func _set_astro_galaxies(galaxies_data):
+	for i in range(len(galaxies_data)):
 		var galaxy = galaxy_scene.instantiate()
+		galaxy.galaxy_id = i
 		galaxy_holder.add_child(galaxy)
 
 func _ready():
-	var data = universe_data.universe
-	_set_astro_galaxies(data)
+	var galaxies_data = universe_data.universe['galaxies']
+	_set_astro_galaxies(galaxies_data)
