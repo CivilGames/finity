@@ -1,6 +1,6 @@
 extends Node2D
 
-
+#@onready var objects = get_node()
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
@@ -14,3 +14,8 @@ func dice(rng: RandomNumberGenerator, eyes: int) -> int:
 
 
 # Zone
+var universe = {}
+var galaxies = {}
+var stars = {}
+var system = {}
+var bodies = {}

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccxf1s4u0jl7"]
+
+[ext_resource type="Script" path="res://scripts/astro_galaxy.gd" id="1_i3um5"]
+
+[node name="AstroGalaxy" type="Node2D"]
+script = ExtResource("1_i3um5")
+
+[node name="Systems" type="Node" parent="."]

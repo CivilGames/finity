@@ -8,6 +8,7 @@ extends Node2D
 @onready var ship = $Ship
 @onready var fog = $Space/Map/Fog
 
+
 var cursor_position: Vector2 = Vector2(64,36)
 var ship_position: Vector2 = cursor_position
 
@@ -19,6 +20,8 @@ func _ready():
 	cursor_sprite.play()
 	cursor.set_position(cursor_position)
 	ship.set_position(ship_position)
+	print(get_tree())
+
 		
 func _input(event):
 	if event.is_action_pressed("right"):
