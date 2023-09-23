@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmkabsurvuve3"]
 
-[ext_resource type="Script" path="res://scripts/astro_generators.gd" id="1_2h4ua"]
+[ext_resource type="Script" path="res://scripts/universe/astro_generators.gd" id="1_2h4ua"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2h4ua")

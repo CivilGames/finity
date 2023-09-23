@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqgwnikj2y5od"]
 
-[ext_resource type="Script" path="res://scripts/astro_generators.gd" id="1_83br6"]
+[ext_resource type="Script" path="res://scripts/universe/astro_generators.gd" id="1_83br6"]
 
 [node name="Node2D" type="Node"]
 script = ExtResource("1_83br6")

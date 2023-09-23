@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8hcwqn4cfh7g"]
+
+[ext_resource type="Script" path="res://scripts/universe/universe_data.gd" id="1_ngulv"]
+
+[node name="UniverseData" type="Node"]
+script = ExtResource("1_ngulv")
