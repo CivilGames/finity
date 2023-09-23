@@ -6,6 +6,3 @@ class_name astro_body
 @export_enum("Planet", "Moon", "Asteroid") var object_type: int
 @export var resources: int
 
-
-func _ready():
-	print('im reachable!')

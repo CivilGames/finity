@@ -42,16 +42,23 @@ sources/3 = SubResource("TileSetAtlasSource_0to65")
 [node name="HUD" type="Node2D"]
 script = ExtResource("1_ldxvq")
 
-[node name="RootCanvas" type="CanvasLayer" parent="."]
+[node name="HUDControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="RootCanvas" type="CanvasLayer" parent="HUDControl"]
 layer = 100
 
-[node name="HUD" type="TextureRect" parent="RootCanvas"]
+[node name="HUD" type="TextureRect" parent="HUDControl/RootCanvas"]
 offset_right = 160.0
 offset_bottom = 144.0
 theme = ExtResource("1_2g41x")
 texture = ExtResource("2_gvko0")
 
-[node name="ResourceBar" type="ProgressBar" parent="RootCanvas/HUD"]
+[node name="ResourceBar" type="ProgressBar" parent="HUDControl/RootCanvas/HUD"]
 layout_mode = 0
 offset_left = 151.0
 offset_top = 5.0
@@ -64,7 +71,7 @@ value = 75.0
 fill_mode = 3
 show_percentage = false
 
-[node name="ResourceLabel" type="Label" parent="RootCanvas/HUD/ResourceBar"]
+[node name="ResourceLabel" type="Label" parent="HUDControl/RootCanvas/HUD/ResourceBar"]
 layout_mode = 0
 offset_left = -16.0
 offset_top = -8.0
@@ -73,7 +80,7 @@ offset_bottom = 6.0
 text = "075 "
 label_settings = SubResource("LabelSettings_edvnc")
 
-[node name="EnergyBar" type="ProgressBar" parent="RootCanvas/HUD"]
+[node name="EnergyBar" type="ProgressBar" parent="HUDControl/RootCanvas/HUD"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 5.0
@@ -86,7 +93,7 @@ value = 30.0
 fill_mode = 3
 show_percentage = false
 
-[node name="EnergyLabel" type="Label" parent="RootCanvas/HUD/EnergyBar"]
+[node name="EnergyLabel" type="Label" parent="HUDControl/RootCanvas/HUD/EnergyBar"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -8.0
@@ -95,17 +102,17 @@ offset_bottom = 6.0
 text = "030 "
 label_settings = SubResource("LabelSettings_edvnc")
 
-[node name="coords" type="TileMap" parent="RootCanvas/HUD"]
+[node name="coords" type="TileMap" parent="HUDControl/RootCanvas/HUD"]
 z_index = -1
 position = Vector2(8, 8)
 tile_set = SubResource("TileSet_0s3u5")
 format = 2
 layer_0/tile_data = PackedInt32Array(65536, 65539, 0, 131072, 65539, 0, 196608, 65539, 0, 262144, 65539, 0, 327680, 65539, 0, 393216, 65539, 0, 458752, 65539, 0, 524288, 65539, 0, 1, 65539, 0, 65537, 65539, 0, 131073, 65539, 0, 196609, 65539, 0, 262145, 65539, 0, 327681, 65539, 0, 393217, 65539, 0, 458753, 65539, 0, 524289, 65539, 0, 2, 65539, 0, 65538, 65539, 0, 131074, 65539, 0, 196610, 65539, 0, 262146, 65539, 0, 327682, 65539, 0, 393218, 65539, 0, 458754, 65539, 0, 524290, 65539, 0, 3, 65539, 0, 65539, 65539, 0, 131075, 65539, 0, 196611, 65539, 0, 262147, 65539, 0, 327683, 65539, 0, 393219, 65539, 0, 458755, 65539, 0, 524291, 65539, 0, 4, 65539, 0, 65540, 65539, 0, 131076, 65539, 0, 196612, 65539, 0, 262148, 65539, 0, 327684, 65539, 0, 393220, 65539, 0, 458756, 65539, 0, 524292, 65539, 0, 5, 65539, 0, 65541, 65539, 0, 131077, 65539, 0, 196613, 65539, 0, 262149, 65539, 0, 327685, 65539, 0, 393221, 65539, 0, 458757, 65539, 0, 524293, 65539, 0, 6, 65539, 0, 65542, 65539, 0, 131078, 65539, 0, 196614, 65539, 0, 262150, 65539, 0, 327686, 65539, 0, 393222, 65539, 0, 458758, 65539, 0, 524294, 65539, 0, 7, 65539, 0, 65543, 65539, 0, 131079, 65539, 0, 196615, 65539, 0, 262151, 65539, 0, 327687, 65539, 0, 393223, 65539, 0, 458759, 65539, 0, 524295, 65539, 0, 8, 65539, 0, 65544, 65539, 0, 131080, 65539, 0, 196616, 65539, 0, 262152, 65539, 0, 327688, 65539, 0, 393224, 65539, 0, 458760, 65539, 0, 524296, 65539, 0, 9, 65539, 0, 65545, 65539, 0, 131081, 65539, 0, 196617, 65539, 0, 262153, 65539, 0, 327689, 65539, 0, 393225, 65539, 0, 458761, 65539, 0, 524297, 65539, 0, 0, 65539, 0, 65535, 65539, 0, 131071, 65539, 0, 196607, 65539, 0, -1, 65539, 0, -65536, 65539, 0, -65535, 65539, 0, -65534, 65539, 0, -65533, 65539, 0, -65532, 65539, 0, -65531, 65539, 0, -65530, 65539, 0, -65529, 65539, 0, -65528, 65539, 0, -65527, 65539, 0, 262143, 65539, 0, 327679, 65539, 0, 393215, 65539, 0, 458751, 65539, 0, 524287, 65539, 0, 589823, 65539, 0)
 
-[node name="MidCanvas" type="CanvasLayer" parent="RootCanvas/HUD"]
+[node name="MidCanvas" type="CanvasLayer" parent="HUDControl/RootCanvas/HUD"]
 layer = 101
 
-[node name="HalfMenu" type="NinePatchRect" parent="RootCanvas/HUD/MidCanvas"]
+[node name="HalfMenu" type="NinePatchRect" parent="HUDControl/RootCanvas/HUD/MidCanvas"]
 offset_left = 11.0
 offset_top = 114.0
 offset_right = 149.0
@@ -117,10 +124,10 @@ patch_margin_top = 7
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="TopCanvas" type="CanvasLayer" parent="RootCanvas/HUD"]
+[node name="TopCanvas" type="CanvasLayer" parent="HUDControl/RootCanvas/HUD"]
 layer = 102
 
-[node name="FullMenu" type="NinePatchRect" parent="RootCanvas/HUD/TopCanvas"]
+[node name="FullMenu" type="NinePatchRect" parent="HUDControl/RootCanvas/HUD/TopCanvas"]
 visible = false
 offset_left = 11.0
 offset_top = 11.0
@@ -132,32 +139,48 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="ScanButton" type="Button" parent="RootCanvas/HUD/TopCanvas"]
+[node name="ButtonControl" type="Control" parent="HUDControl/RootCanvas/HUD/TopCanvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScanButton" type="Button" parent="HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 118.0
 offset_right = 57.0
 offset_bottom = 140.0
+focus_neighbor_top = NodePath("../MenuButton")
+focus_next = NodePath("../MenuButton")
 theme = ExtResource("1_2g41x")
 toggle_mode = true
 action_mode = 0
 text = "SCAN"
-metadata/_edit_use_anchors_ = true
 
-[node name="MenuButton" type="Button" parent="RootCanvas/HUD/TopCanvas"]
+[node name="MenuButton" type="Button" parent="HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl"]
+layout_mode = 0
 offset_left = 58.0
 offset_top = 118.0
 offset_right = 102.0
 offset_bottom = 140.0
+focus_neighbor_left = NodePath("../ScanButton")
+focus_neighbor_right = NodePath("../JumpButton")
+focus_next = NodePath("../JumpButton")
+focus_previous = NodePath("../ScanButton")
 theme = ExtResource("1_2g41x")
 toggle_mode = true
 action_mode = 0
 text = "MENU"
 
-[node name="JumpButton" type="Button" parent="RootCanvas/HUD/TopCanvas"]
+[node name="JumpButton" type="Button" parent="HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl"]
+layout_mode = 0
 offset_left = 103.0
 offset_top = 118.0
 offset_right = 147.0
 offset_bottom = 140.0
+focus_neighbor_left = NodePath("../MenuButton")
+focus_previous = NodePath("../MenuButton")
 theme = ExtResource("1_2g41x")
 toggle_mode = true
 action_mode = 0

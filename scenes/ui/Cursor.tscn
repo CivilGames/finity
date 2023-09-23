@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddebjwielt3gn"]
+[gd_scene load_steps=6 format=3 uid="uid://ddebjwielt3gn"]
 
+[ext_resource type="Script" path="res://scripts/ui/Cursor.gd" id="1_j2oib"]
 [ext_resource type="Texture2D" uid="uid://c2n5j6xl44s57" path="res://assets/textures/space_map.png" id="1_ogqcp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f32jg"]
@@ -25,6 +26,7 @@ animations = [{
 }]
 
 [node name="Cursor" type="Node2D"]
+script = ExtResource("1_j2oib")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ilyho")
