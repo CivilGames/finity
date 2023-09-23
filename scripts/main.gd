@@ -20,7 +20,7 @@ func _ready():
 	cursor_sprite.play()
 	cursor.set_position(cursor_position)
 	ship.set_position(ship_position)
-	print(get_tree())
+	
 
 		
 func _input(event):

@@ -8,8 +8,3 @@
 z_index = -1
 texture = ExtResource("1_d50pr")
 offset = Vector2(0, 8)
-
-[node name="Ship2" type="Sprite2D" parent="."]
-z_index = -1
-texture = ExtResource("1_d50pr")
-offset = Vector2(0, 8)

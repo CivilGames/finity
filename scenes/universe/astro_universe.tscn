@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://daio82h0lpbs2"]
+
+[ext_resource type="Script" path="res://scripts/universe/astro_universe.gd" id="1_tccje"]
+
+[node name="AstroUniverse" type="Node2D"]
+script = ExtResource("1_tccje")
+
+[node name="Galaxies" type="Node" parent="."]

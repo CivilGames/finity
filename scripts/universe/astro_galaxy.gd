@@ -14,4 +14,3 @@ func _set_astro_systems():
 
 func _ready():
 	_set_astro_systems()
-#	print(systems)
