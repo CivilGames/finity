@@ -4,4 +4,6 @@
 load_path = "res://.godot/imported/body_map.png-b68e8b20d1de4e1bffc864d2dea7ca91.ctex"
 
 [resource]
+resource_local_to_scene = true
 atlas = SubResource("CompressedTexture2D_1qqh4")
+region = Rect2(48, 0, 16, 16)

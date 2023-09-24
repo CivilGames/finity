@@ -24,7 +24,7 @@ func _set_astro_system(systems_data):
 		system.galaxy_id = galaxy_id
 		system.system_id = len(systems_data)
 		system_holder.add_child(system)
-		systems_data.pop_front()
+#		systems_data.pop_front()
 
 func _ready():
 	var systems_data = universe_data.universe['galaxies'][0]['systems']

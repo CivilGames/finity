@@ -5,11 +5,11 @@ extends Node
 var agg: Array = []
 
 var system_sizes: Array = [
+	[8,8],
+	[10,10],
 	[12,12],
-	[16,16],
-	[24,24],
-	[36,36],
-	[48,48]
+	[14,14],
+	[16,16]
 ]
 
 var universe: Dictionary = {}
@@ -17,7 +17,10 @@ var universe: Dictionary = {}
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	rng.seed = 42
+
+#	if OS.is_debug_build():
+#		print(true)
+#		rng.seed = 42
 	
 	universe = generate_universe(rng)
 
@@ -56,7 +59,7 @@ func generate_system(rng, kwargs):
 		
 func generate_body(rng, kwargs):
 	return {
-		"name": "name",
+		"body_name": "name",
 		"object_type": dice(rng, 1,3),
 		"resources": dice(rng, 100,0)		
 	}

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpovpdfy0wvl4"]
+[gd_scene load_steps=4 format=3 uid="uid://cpovpdfy0wvl4"]
 
 [ext_resource type="Script" path="res://scripts/universe/astro_system.gd" id="1_xtvjh"]
 [ext_resource type="TileSet" uid="uid://epfk5fvjsknk" path="res://assets/themes/space/astro_terrain.tres" id="2_x2j8m"]
+[ext_resource type="TileSet" uid="uid://faq65sqvo14e" path="res://assets/themes/space/scan_terrain.tres" id="3_myres"]
 
 [node name="AstroSystem" type="Node2D" groups=["astro_systems"]]
 script = ExtResource("1_xtvjh")
@@ -17,7 +18,7 @@ format = 2
 [node name="scanned" type="TileMap" parent="."]
 z_index = 100
 position = Vector2(-8, 4)
-tile_set = ExtResource("2_x2j8m")
+tile_set = ExtResource("3_myres")
 format = 2
 
 [node name="space" type="TileMap" parent="."]
