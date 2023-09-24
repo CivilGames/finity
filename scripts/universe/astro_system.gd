@@ -14,6 +14,7 @@ extends Node2D
 
 @onready var space = $space
 @onready var fog = $fog
+@onready var scanned = $scanned
 
 
 func _set_astro_bodies(bodies_data):
@@ -34,12 +35,11 @@ func _ready():
 	generate_system()
 
 func generate_system():
-	generate_system_map(system_size, space)
+#	generate_system_map(system_size, space, 0, 2)
 	populate_system_map()
-	generate_system_map(system_size, fog)
+	generate_system_map(system_size, fog, 0, 0)
 
 func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0, terrain: int=0):
-	@warning_ignore("unassigned_variable")
 	var window: Array[Vector2i]
 	for y in coordinates[1]:
 		for x in coordinates[0]:
