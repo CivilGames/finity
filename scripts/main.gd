@@ -6,8 +6,10 @@ extends Node2D
 #@onready var full_menu = $HUD/RootCanvas/HUD/TopCanvas/FullMenu
 @onready var  camera =  %Camera
 @onready var ship = $Ship
-@onready var fog = $Space/Map/Fog 
-@onready var space = $Space
+#@onready var fog = $Space/Map/Fog 
+#@onready var space = $Space
+@onready var system = get_tree().get_nodes_in_group("astro_systems")[0]
+@onready var fog = system.fog
 
 var cursor_position: Vector2 = Vector2(64,36)
 var ship_position: Vector2 = cursor_position
@@ -20,15 +22,11 @@ func _process(_delta):
 func _ready():
 	cursor.set_position(cursor_position)
 	ship.set_position(ship_position)
+
+#	get_tree().change_scene_to_packed(system)
 	
-	var systems = get_tree().get_nodes_in_group("astro_systems")
-	var current_systems = []
-	for system in systems:
-		if system.galaxy_id == 0:
-			current_systems.append(system) 
-#		print(system.system_id)
-	print(systems)
-	print(current_systems[0].system_resources)
+	
+#	print(current_systems[0].system_resources)
 #	hud.menu_button.grab_focus()
 #	hud.mode.connect(_menu_mode_test)
 

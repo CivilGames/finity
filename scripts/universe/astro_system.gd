@@ -26,22 +26,23 @@ func _set_astro_bodies(bodies_data):
 		body_holder.add_child(body)
 
 func _ready():
-	var data = universe_data.universe['galaxies'][galaxy_id]['systems'][system_id]
-	system_size = data['system_size']
-	system_resources = data['system_resources']
-	var bodies_data = data['bodies']
-	
+	var system_data = universe_data.universe['galaxies'][0]['systems'][0]
+	system_size = system_data['system_size']
+	system_resources = system_data['system_resources']
+	var bodies_data = system_data['bodies']
 	_set_astro_bodies(bodies_data)
-#	generate_system()
+	generate_system()
 
 func generate_system():
 	generate_system_map(system_size, space)
+	populate_system_map()
 	generate_system_map(system_size, fog)
 
-func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0, terrain: int=0, cell_size: int=16):
+func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0, terrain: int=0):
+	@warning_ignore("unassigned_variable")
 	var window: Array[Vector2i]
-	for y in coordinates[1] * cell_size:
-		for x in coordinates[0] * cell_size:
+	for y in coordinates[1]:
+		for x in coordinates[0]:
 			window.append(Vector2i(x, y))
 
 	cells.set_cells_terrain_connect(0,window,terrain_set,terrain,false)

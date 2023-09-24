@@ -18,7 +18,6 @@ config/icon="res://assets/textures/archive/icon.svg"
 [autoload]
 
 AstroGenerators="*res://scripts/universe/astro_generators.gd"
-UniverseData="res://scripts/universe/universe_data.gd"
 
 [display]
 

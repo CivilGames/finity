@@ -14,9 +14,13 @@ unique_name_in_owner = true
 offset = Vector2(0, 16)
 
 [node name="Ship" parent="." instance=ExtResource("3_n3bv8")]
+z_index = 2
 
 [node name="HUD" parent="." instance=ExtResource("2_e4hx2")]
+z_index = 1
 
 [node name="Space" parent="." instance=ExtResource("1_fbfk2")]
+z_index = -1
 
 [node name="Cursor" parent="." instance=ExtResource("5_alqfb")]
+z_index = 2

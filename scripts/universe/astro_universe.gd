@@ -14,6 +14,16 @@ func _set_astro_galaxies(galaxies_data):
 		galaxy_holder.add_child(galaxy)
 
 
+func _set_astro_galaxy(galaxies_data):
+	if len(galaxies_data) > 0:
+		var galaxy = galaxy_scene.instantiate()
+		galaxy.galaxy_id = len(galaxies_data)
+		galaxy_holder.add_child(galaxy)
+		
+#		galaxies_data.pop_front()
+
+
 func _ready():
 	var galaxies_data = universe_data.universe['galaxies']
-	_set_astro_galaxies(galaxies_data)
+#	_set_astro_galaxies(galaxies_data)
+	_set_astro_galaxy(galaxies_data)

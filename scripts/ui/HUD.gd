@@ -20,7 +20,6 @@ func _ready():
 	menu_button.toggled.connect(self._menu_button_pressed)
 	jump_button.toggled.connect(self._jump_button_pressed)
 
-
 func _scan_button_pressed(toggled):
 	_untoggle_buttons(scan_button)
 	mode.emit('scan', toggled)
@@ -43,4 +42,3 @@ func _untoggle_buttons(toggled_button):
 	for button in buttons:
 		if button != toggled_button:
 			button.toggle_mode = !button.toggle_mode
-
