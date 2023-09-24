@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0dlwom22spro"]
+[gd_scene load_steps=4 format=3 uid="uid://c0dlwom22spro"]
 
 [ext_resource type="Script" path="res://scripts/universe/astro_body.gd" id="1_3sgku"]
-[ext_resource type="Texture2D" uid="uid://q35wgv2d8ssh" path="res://assets/textures/craft.png" id="2_24gm8"]
+[ext_resource type="Texture2D" uid="uid://bd15x7by5q203" path="res://assets/textures/body_map.png" id="2_s3cs3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywy0u"]
+atlas = ExtResource("2_s3cs3")
 
 [node name="AstroBody" type="Node2D" groups=["astro_bodies"]]
+position = Vector2(0, -4)
 script = ExtResource("1_3sgku")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(60, 63)
-texture = ExtResource("2_24gm8")
+[node name="BodySprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ywy0u")

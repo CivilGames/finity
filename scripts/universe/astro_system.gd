@@ -49,4 +49,5 @@ func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0,
 
 func populate_system_map():
 	pass
+#	scanned.set_cells_terrain_connect(0,[Vector2i(tile.x,tile.y)],0,1,false)
 
