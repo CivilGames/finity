@@ -12,6 +12,9 @@ extends Node2D
 @onready var body_holder = $Bodies
 @onready var body_scene = load('res://scenes/universe/astro_body.tscn')
 
+@onready var space = $space
+@onready var fog = $fog
+
 
 func _set_astro_bodies(bodies_data):
 	for i in range(len(bodies_data)):
@@ -19,6 +22,7 @@ func _set_astro_bodies(bodies_data):
 		body.galaxy_id = galaxy_id
 		body.system_id = system_id
 		body.body_id = i
+		body.system_size = system_size
 		body_holder.add_child(body)
 
 func _ready():
@@ -26,4 +30,22 @@ func _ready():
 	system_size = data['system_size']
 	system_resources = data['system_resources']
 	var bodies_data = data['bodies']
+	
 	_set_astro_bodies(bodies_data)
+#	generate_system()
+
+func generate_system():
+	generate_system_map(system_size, space)
+	generate_system_map(system_size, fog)
+
+func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0, terrain: int=0, cell_size: int=16):
+	var window: Array[Vector2i]
+	for y in coordinates[1] * cell_size:
+		for x in coordinates[0] * cell_size:
+			window.append(Vector2i(x, y))
+
+	cells.set_cells_terrain_connect(0,window,terrain_set,terrain,false)
+
+func populate_system_map():
+	pass
+

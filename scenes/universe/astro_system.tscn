@@ -1,8 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpovpdfy0wvl4"]
+[gd_scene load_steps=7 format=3 uid="uid://cpovpdfy0wvl4"]
 
 [ext_resource type="Script" path="res://scripts/universe/astro_system.gd" id="1_xtvjh"]
+[ext_resource type="Texture2D" uid="uid://c2n5j6xl44s57" path="res://assets/textures/space_map.png" id="2_02q84"]
 
-[node name="AstroSystem" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvt87"]
+texture = ExtResource("2_02q84")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_83yxn"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/1 = SubResource("TileSetAtlasSource_cvt87")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7qm3"]
+texture = ExtResource("2_02q84")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/terrains_peering_bit/right_side = 0
+3:0/0/terrains_peering_bit/bottom_right_corner = 0
+3:0/0/terrains_peering_bit/bottom_side = 0
+3:0/0/terrains_peering_bit/bottom_left_corner = 0
+3:0/0/terrains_peering_bit/left_side = 0
+3:0/0/terrains_peering_bit/top_left_corner = 0
+3:0/0/terrains_peering_bit/top_side = 0
+3:0/0/terrains_peering_bit/top_right_corner = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j2x53"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.619608, 0.160784, 0.521569, 1)
+sources/0 = SubResource("TileSetAtlasSource_n7qm3")
+
+[node name="AstroSystem" type="Node2D" groups=["astro_systems"]]
 script = ExtResource("1_xtvjh")
 
 [node name="Bodies" type="Node" parent="."]
+
+[node name="fog" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_83yxn")
+format = 2
+
+[node name="space" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_j2x53")
+format = 2

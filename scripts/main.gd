@@ -7,6 +7,7 @@ extends Node2D
 @onready var  camera =  %Camera
 @onready var ship = $Ship
 @onready var fog = $Space/Map/Fog 
+@onready var space = $Space
 
 var cursor_position: Vector2 = Vector2(64,36)
 var ship_position: Vector2 = cursor_position
@@ -19,64 +20,55 @@ func _process(_delta):
 func _ready():
 	cursor.set_position(cursor_position)
 	ship.set_position(ship_position)
+	
+	var systems = get_tree().get_nodes_in_group("astro_systems")
+	var current_systems = []
+	for system in systems:
+		if system.galaxy_id == 0:
+			current_systems.append(system) 
+#		print(system.system_id)
+	print(systems)
+	print(current_systems[0].system_resources)
+#	hud.menu_button.grab_focus()
+#	hud.mode.connect(_menu_mode_test)
 
-	hud.menu_button.grab_focus()
-	hud.mode.connect(_menu_mode_test)
+func load_map():
+	pass
 
-#func _input(event):
-#	if event.is_action_pressed("left"):
-#		buttons.find_next_valid_focus()
-#	if event.is_action_pressed("right"):
-#		buttons.find_next_valid_focus()
+func _input(event):
+	if event.is_action_pressed("right"):
+		cursor_position.x += 16
+	if event.is_action_pressed("left"):
+		cursor_position.x -= 16
+	if event.is_action_pressed("up"):
+		cursor_position.y -= 16
+	if event.is_action_pressed("down"):
+		cursor_position.y += 16
 
-#func _input(event):
-#	if event.is_action_pressed("right"):
-#
-#	if event.is_action_pressed("left"):
-#		cursor_position.x -= 16
-
-#func _input(event):
-#	if event.is_action_pressed("right"):
-#		cursor_position.x += 16
-#	if event.is_action_pressed("left"):
-#		cursor_position.x -= 16
-#	if event.is_action_pressed("up"):
-#		cursor_position.y -= 16
-#	if event.is_action_pressed("down"):
-#		cursor_position.y += 16
-#
-#
-#
-#	if event.is_action_pressed("A"):
-#		ship.set_position(cursor.get_position())
-#		var tile = fog.local_to_map(cursor_position)
-#		fog.set_cell(0, Vector2i(tile.x, tile.y), -1)
+	if event.is_action_pressed("A"):
+		ship.set_position(cursor.get_position())
+		var tile = fog.local_to_map(cursor_position)
+		fog.set_cell(0, Vector2i(tile.x, tile.y), -1)
 	
 #	if event.is_action_pressed("B"):
 #		full_menu.visible = !full_menu.visible
 
-func _menu_mode_test(mode, toggled):
-	if (mode == 'scan' or mode == 'jump') and toggled:
-		print('hoi')
-		if Input.is_action_pressed("right"):
-			print('rechts')
-			cursor_position.x += 16
-		if Input.is_action_pressed("left"):
-			cursor_position.x -= 16
-		if Input.is_action_pressed("up"):
-			cursor_position.y -= 16
-		if Input.is_action_pressed("down"):
-			cursor_position.y += 16
-	else:
-		if Input.is_action_pressed("left"):
-			buttons.find_next_valid_focus()
-		if Input.is_action_pressed("right"):
-			buttons.find_next_valid_focus()
-		
-
-#	var rng = RandomNumberGenerator.new()
-#	rng.randomize()
-#	var generator = astro_generators.new()
-#	var universe = generator.generate_universe(rng)
-#
-#	bigbang.emit(universe)
+#func _menu_mode_test(mode, toggled):
+#	if (mode == 'scan' or mode == 'jump') and toggled:
+#		print('hoi')
+#		if Input.is_action_pressed("right"):
+#			print('rechts')
+#			cursor_position.x += 16
+#		if Input.is_action_pressed("left"):
+#			cursor_position.x -= 16
+#		if Input.is_action_pressed("up"):
+#			cursor_position.y -= 16
+#		if Input.is_action_pressed("down"):
+#			cursor_position.y += 16
+##	elif mode == 'menu' and toggled:
+#	else:
+#		print('hai')
+#		if Input.is_action_pressed("left"):
+#			buttons.find_next_valid_focus()
+#		if Input.is_action_pressed("right"):
+#			buttons.find_next_valid_focus()

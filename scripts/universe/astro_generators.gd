@@ -17,6 +17,7 @@ var universe: Dictionary = {}
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
+	rng.seed = 42
 	
 	universe = generate_universe(rng)
 
@@ -42,7 +43,7 @@ func generate_galaxy(rng, kwargs):
 		
 func generate_system(rng, kwargs):
 	var size = system_sizes[dice(rng,4,0)]
-	var number_of_bodies = dice(rng,size[0],4)
+	var number_of_bodies = dice(rng,floor(size[0]/2),4)
 	var bodies = []
 	for body in number_of_bodies:
 		bodies.append(generate_body(rng, kwargs))

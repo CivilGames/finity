@@ -13,6 +13,7 @@ func _set_astro_galaxies(galaxies_data):
 		galaxy.galaxy_id = i
 		galaxy_holder.add_child(galaxy)
 
+
 func _ready():
 	var galaxies_data = universe_data.universe['galaxies']
 	_set_astro_galaxies(galaxies_data)

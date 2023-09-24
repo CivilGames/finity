@@ -8,6 +8,7 @@ class_name astro_body
 @export var galaxy_id: int
 @export var system_id: int
 @export var body_id: int
+@export var system_size: Array
 
 @export_enum("Planet", "Moon", "Asteroid") var object_type: int
 @export var resources: int
