@@ -17,10 +17,6 @@ var universe: Dictionary = {}
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-
-#	if OS.is_debug_build():
-#		print(true)
-#		rng.seed = 42
 	
 	universe = generate_universe(rng)
 
@@ -32,24 +28,24 @@ func generate_universe(rng):
 	var number_of_galaxies = dice(rng, 6, 1)
 	var galaxies = []
 	for galaxy in number_of_galaxies:
-		galaxies.append(generate_galaxy(rng, {}))
+		galaxies.append(generate_galaxy(rng))
 		
 	return {'galaxies': galaxies}
 		
-func generate_galaxy(rng, kwargs):
+func generate_galaxy(rng):
 	var number_of_systems = dice(rng,4,2)
 	var systems = []
 	for system in number_of_systems:
-		systems.append(generate_system(rng, kwargs))
+		systems.append(generate_system(rng))
 		
 	return {'systems': systems} 
 		
-func generate_system(rng, kwargs):
+func generate_system(rng):
 	var size = system_sizes[dice(rng,4,0)]
 	var number_of_bodies = dice(rng,floor(size[0]/2),4)
 	var bodies = []
 	for body in number_of_bodies:
-		bodies.append(generate_body(rng, kwargs))
+		bodies.append(generate_body(rng))
 		
 	var sum = 0
 	for body in bodies:
@@ -57,7 +53,7 @@ func generate_system(rng, kwargs):
 	
 	return {'system_size': size, 'system_resources': sum, 'bodies': bodies}
 		
-func generate_body(rng, kwargs):
+func generate_body(rng):
 	return {
 		"body_name": "name",
 		"object_type": dice(rng, 1,3),

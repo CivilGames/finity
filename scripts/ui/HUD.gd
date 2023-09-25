@@ -1,16 +1,23 @@
 extends Node2D
 
-@onready var scan_button = $HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl/ScanButton
-@onready var menu_button = $HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl/MenuButton
-@onready var jump_button = $HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl/JumpButton
+#@onready var scan_button = $HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl/ScanButton
+#@onready var menu_button = $HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl/MenuButton
+#@onready var jump_button = $HUDControl/RootCanvas/HUD/TopCanvas/ButtonControl/JumpButton
+#
+#@onready var menu = $HUDControl/RootCanvas/HUD/TopCanvas/FullMenu
 
-@onready var menu = $HUDControl/RootCanvas/HUD/TopCanvas/FullMenu
+@onready var scan_button = $RootCanvas/HUDControl/HUD/TopCanvas/ButtonControl/ScanButton
+@onready var menu_button = $RootCanvas/HUDControl/HUD/TopCanvas/ButtonControl/MenuButton
+@onready var jump_button = $RootCanvas/HUDControl/HUD/TopCanvas/ButtonControl/JumpButton
+
+@onready var menu = $RootCanvas/HUDControl/HUD/TopCanvas/FullMenu
 
 @onready var buttons: Array = [
 	scan_button, 
 	menu_button, 
 	jump_button
 ]
+
 
 signal mode(active_mode: String, toggled: bool)
 
@@ -19,6 +26,10 @@ func _ready():
 	scan_button.toggled.connect(self._scan_button_pressed)
 	menu_button.toggled.connect(self._menu_button_pressed)
 	jump_button.toggled.connect(self._jump_button_pressed)
+
+
+
+# TODO: Signals for the buttons when/if you want to put them back
 
 func _scan_button_pressed(toggled):
 	_untoggle_buttons(scan_button)

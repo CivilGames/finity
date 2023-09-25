@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://mloy8xmb4p4o"]
 
-[ext_resource type="PackedScene" uid="uid://cx5uy67shkac2" path="res://scenes/universe/Space.tscn" id="1_fbfk2"]
+[ext_resource type="PackedScene" uid="uid://cx5uy67shkac2" path="res://scenes/universe/Universe.tscn" id="1_fbfk2"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_xydj6"]
 [ext_resource type="PackedScene" uid="uid://cq7brw5g1hma2" path="res://scenes/ui/HUD.tscn" id="2_e4hx2"]
 [ext_resource type="PackedScene" uid="uid://bx5dvhhfe4v4" path="res://scenes/entities/Ship.tscn" id="3_n3bv8"]
@@ -11,15 +11,16 @@ script = ExtResource("1_xydj6")
 
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
-offset = Vector2(0, 16)
-
-[node name="Ship" parent="." instance=ExtResource("3_n3bv8")]
-z_index = 3
 
 [node name="HUD" parent="." instance=ExtResource("2_e4hx2")]
-z_index = 1
 
-[node name="Space" parent="." instance=ExtResource("1_fbfk2")]
+[node name="Scene" type="Node2D" parent="."]
+position = Vector2(0, -8)
 
-[node name="Cursor" parent="." instance=ExtResource("5_alqfb")]
+[node name="Ship" parent="Scene" instance=ExtResource("3_n3bv8")]
 z_index = 3
+
+[node name="Cursor" parent="Scene" instance=ExtResource("5_alqfb")]
+z_index = 3
+
+[node name="Universe" parent="Scene" instance=ExtResource("1_fbfk2")]

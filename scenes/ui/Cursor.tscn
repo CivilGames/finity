@@ -31,4 +31,3 @@ script = ExtResource("1_j2oib")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ilyho")
 frame_progress = 0.0984843
-offset = Vector2(0, 8)
