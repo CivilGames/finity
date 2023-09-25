@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://kkohru1272nv" path="res://assets/themes/space/astro_bodies.tres" id="2_rsqyx"]
 
 [node name="AstroBody" type="Node2D" groups=["astro_bodies"]]
-position = Vector2(0, -4)
 script = ExtResource("1_3sgku")
 
 [node name="BodySprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_rsqyx")
+offset = Vector2(8, 8)

@@ -2,6 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://daio82h0lpbs2" path="res://scenes/universe/astro_universe.tscn" id="3_1in3u"]
 
-[node name="Space" type="Node"]
+[node name="Universe" type="Node"]
 
 [node name="AstroUniverse" parent="." instance=ExtResource("3_1in3u")]

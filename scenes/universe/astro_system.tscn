@@ -5,24 +5,19 @@
 [ext_resource type="TileSet" uid="uid://faq65sqvo14e" path="res://assets/themes/space/scan_terrain.tres" id="3_myres"]
 
 [node name="AstroSystem" type="Node2D" groups=["astro_systems"]]
+position = Vector2(-8, -16)
 script = ExtResource("1_xtvjh")
 
-[node name="Bodies" type="Node" parent="."]
-
 [node name="fog" type="TileMap" parent="."]
-visible = false
 z_index = 1
-position = Vector2(-8, 4)
 tile_set = ExtResource("2_x2j8m")
 format = 2
 
 [node name="scanned" type="TileMap" parent="."]
 z_index = 100
-position = Vector2(-8, 4)
 tile_set = ExtResource("3_myres")
 format = 2
 
-[node name="space" type="TileMap" parent="."]
-position = Vector2(-8, 4)
-tile_set = ExtResource("2_x2j8m")
-format = 2
+[node name="Space" type="Node2D" parent="."]
+
+[node name="Bodies" type="Node2D" parent="Space"]

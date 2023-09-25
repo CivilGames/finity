@@ -11,5 +11,5 @@ func _ready():
 #	hud.mode.connect(_on_mode_received)
 
 
-func _on_mode_received(mode, toggled):
-	print(mode, toggled)
+# func _on_mode_received(mode, toggled):
+# 	print(mode, toggled)
