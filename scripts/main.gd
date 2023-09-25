@@ -12,6 +12,7 @@ extends Node2D
 @onready var energy_bar = $HUD/RootCanvas/HUDControl/HUD/EnergyBar
 @onready var energy_text = $HUD/RootCanvas/HUDControl/HUD/EnergyBar/EnergyLabel
 
+@onready var wormhole = get_tree().get_nodes_in_group("wormholes")[0]
 @onready var bodies = get_tree().get_nodes_in_group("astro_bodies")
 var body_data = []
 
@@ -51,7 +52,10 @@ func check_for_resources():
 			gain_energy(body['resources'])
 			body_data.erase(body)
 			return true
-		
+
+func check_for_wormhole():
+	if cursor_position == wormhole.get_position():
+		return true
 
 func _input(event):
 	if event.is_action_pressed("right"):
@@ -77,6 +81,9 @@ func _input(event):
 
 		if check_for_resources():
 			system.scanned.set_cells_terrain_connect(0,[Vector2i(tile.x,tile.y)],0,1,false)
+		
+		if check_for_wormhole():
+			system.next_map()
 
 func _update_resource_bar(value: float):
 	resource_bar.value = value
@@ -101,5 +108,6 @@ func gain_energy(value: float):
 func lose_energy(value: float):
 	if energy_bar.value - value < 0:
 		queue_free()
+		get_tree().change_scene_to_file("res://scenes/menus/game_over.tscn")
 	else:
 		_update_energy_bar(energy_bar.value - value)

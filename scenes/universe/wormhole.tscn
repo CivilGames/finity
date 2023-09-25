@@ -26,11 +26,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Wormhole" type="Node2D"]
+[node name="Wormhole" type="Node2D" groups=["wormholes"]]
 position = Vector2(8, 8)
 script = ExtResource("1_s7il3")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pmpgb")
-frame_progress = 0.77615
+frame_progress = 0.121736
 centered = false

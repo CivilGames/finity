@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgrwc3a16dukl"]
+
+[ext_resource type="Script" path="res://scripts/menus/jump_system.gd" id="1_rv753"]
+[ext_resource type="Theme" uid="uid://dgiuf5vywebvp" path="res://assets/themes/ui/ui_theme.tres" id="2_lnhbk"]
+
+[node name="JumpMenu" type="Node2D"]
+script = ExtResource("1_rv753")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -2.0
+offset_top = 24.0
+offset_right = 162.0
+offset_bottom = 50.0
+theme = ExtResource("2_lnhbk")
+theme_override_colors/font_color = Color(0.875, 0.96875, 0.8125, 1)
+text = "Jumping to next 
+Star System"
+horizontal_alignment = 1

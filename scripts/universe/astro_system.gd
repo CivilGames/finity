@@ -26,6 +26,7 @@ func _set_astro_bodies(bodies_data):
 		body_holder.add_child(body)
 
 func _ready():
+	print(universe_data.universe['galaxies'][0]['systems'])
 	var system_data = universe_data.universe['galaxies'][0]['systems'][0]
 	system_size = system_data['system_size']
 	print(str('map_size: ', [system_size[0]*16, system_size[1]*16]))
@@ -35,6 +36,10 @@ func _ready():
 	wormhole.position = Vector2i((randi() % (system_size[0] - 1)) * 16, (randi() % (system_size[0] - 1)) * 16)
 	print(str('wormhole: ', wormhole.position))
 	generate_system()
+
+func _input(event):
+	if event.is_action_pressed("select"):
+		fog.visible = !fog.visible
 
 func generate_system():
 	generate_system_map(system_size, fog, 0, 0)
@@ -46,3 +51,13 @@ func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0,
 			window.append(Vector2i(x, y))
 
 	cells.set_cells_terrain_connect(0,window,terrain_set,terrain,false)
+
+func next_map():
+	var galaxy_data = universe_data.universe['galaxies'][0]['systems']
+	galaxy_data.pop_front()
+	queue_free()
+	if len(galaxy_data) == 0:
+		if len(universe_data.universe['galaxies']) == 0:
+			get_tree().change_scene_to_file("res://scenes/menus/end_state.tscn")
+		get_tree().change_scene_to_file("res://scenes/menus/jump_galaxy.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/jump_system.tscn")

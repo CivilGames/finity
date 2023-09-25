@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqgwnikj2y5od"]
+[gd_scene load_steps=2 format=3 uid="uid://dgm87ulvvh7kh"]
 
 [ext_resource type="Script" path="res://scripts/universe/astro_generators.gd" id="1_83br6"]
 

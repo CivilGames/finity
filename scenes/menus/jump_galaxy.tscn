@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlratjla4465c"]
+
+[ext_resource type="Theme" uid="uid://dgiuf5vywebvp" path="res://assets/themes/ui/ui_theme.tres" id="1_wxj1e"]
+
+[node name="JumpGalaxy" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 13.0
+offset_right = 157.0
+offset_bottom = 78.0
+theme = ExtResource("1_wxj1e")
+theme_override_colors/font_color = Color(0.875, 0.96875, 0.8125, 1)
+text = "All galaxy resources 
+consumed. well done!
+
+Jumping to next
+ galaxy"
+horizontal_alignment = 1
