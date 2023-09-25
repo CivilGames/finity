@@ -56,8 +56,17 @@ func next_map():
 	var galaxy_data = universe_data.universe['galaxies'][0]['systems']
 	galaxy_data.pop_front()
 	queue_free()
+	print('pre')
 	if len(galaxy_data) == 0:
+		universe_data.universe['galaxies'].pop_front()
+		print('here')
+		print(len(galaxy_data))
+		print('galaxy: ')
+		print(len(universe_data.universe['galaxies']))
 		if len(universe_data.universe['galaxies']) == 0:
+			print('if')
 			get_tree().change_scene_to_file("res://scenes/menus/end_state.tscn")
-		get_tree().change_scene_to_file("res://scenes/menus/jump_galaxy.tscn")
+		else:
+			print('else')
+			get_tree().change_scene_to_file("res://scenes/menus/jump_galaxy.tscn")
 	get_tree().change_scene_to_file("res://scenes/menus/jump_system.tscn")

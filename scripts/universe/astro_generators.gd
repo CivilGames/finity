@@ -20,7 +20,7 @@ func _ready():
 	universe = generate_universe(rng)
 
 func generate_universe(rng):
-	var number_of_galaxies = rng.randi_range(1, 1)#6)
+	var number_of_galaxies = rng.randi_range(1, 3)
 	var galaxies = []
 	for galaxy in number_of_galaxies:
 		galaxies.append(generate_galaxy(rng))
@@ -28,7 +28,7 @@ func generate_universe(rng):
 	return {'galaxies': galaxies}
 
 func generate_galaxy(rng):
-	var number_of_systems = rng.randi_range(1,1)#2, 4)
+	var number_of_systems = 2#rng.randi_range(2, 4)
 	var systems = []
 	for system in number_of_systems:
 		systems.append(generate_system(rng))
@@ -36,8 +36,8 @@ func generate_galaxy(rng):
 	return {'systems': systems} 
 
 func generate_system(rng):
-	var size = system_sizes[0]#rng.randi_range(0, 4)]
-	var number_of_bodies = rng.randi_range(1,1)#4, size[0])
+	var size = system_sizes[rng.randi_range(0, 4)]
+	var number_of_bodies = rng.randi_range((size[0]/2), size[0])
 	var bodies = []
 	for body in number_of_bodies:
 		bodies.append(generate_body(rng))

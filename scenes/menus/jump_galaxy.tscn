@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlratjla4465c"]
+[gd_scene load_steps=3 format=3 uid="uid://dlratjla4465c"]
 
+[ext_resource type="Script" path="res://scripts/menus/jump_galaxy.gd" id="1_7fqkk"]
 [ext_resource type="Theme" uid="uid://dgiuf5vywebvp" path="res://assets/themes/ui/ui_theme.tres" id="1_wxj1e"]
 
 [node name="JumpGalaxy" type="Node2D"]
+script = ExtResource("1_7fqkk")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 5.0

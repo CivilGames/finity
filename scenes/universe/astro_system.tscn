@@ -10,6 +10,7 @@ position = Vector2(-8, -16)
 script = ExtResource("1_xtvjh")
 
 [node name="fog" type="TileMap" parent="."]
+visible = false
 z_index = 1
 tile_set = ExtResource("2_x2j8m")
 format = 2
