@@ -91,6 +91,7 @@ offset_bottom = 138.0
 theme_override_fonts/font = ExtResource("4_qt302")
 theme_override_styles/background = SubResource("StyleBoxFlat_u8dcp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rxa2a")
+max_value = 500.0
 step = 1.0
 value = 100.0
 fill_mode = 3

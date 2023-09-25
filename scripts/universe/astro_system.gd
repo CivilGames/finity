@@ -11,14 +11,13 @@ extends Node2D
 
 @onready var body_holder = $Space/Bodies
 @onready var body_scene = load('res://scenes/universe/astro_body.tscn')
-
 @onready var space = $Space
 @onready var fog = $fog
 @onready var scanned = $scanned
-
+@onready var wormhole = $Space/Wormhole
 
 func _set_astro_bodies(bodies_data):
-	for i in range(len(bodies_data[0])):
+	for i in range(len(bodies_data)):
 		var body = body_scene.instantiate()
 		body.galaxy_id = galaxy_id
 		body.system_id = system_id
@@ -33,10 +32,11 @@ func _ready():
 	system_resources = system_data['system_resources']
 	var bodies_data = system_data['bodies']
 	_set_astro_bodies(bodies_data)
+	wormhole.position = Vector2i((randi() % (system_size[0] - 1)) * 16, (randi() % (system_size[0] - 1)) * 16)
+	print(str('wormhole: ', wormhole.position))
 	generate_system()
 
 func generate_system():
-#	generate_system_map(system_size, space, 0, 2)
 	generate_system_map(system_size, fog, 0, 0)
 
 func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0, terrain: int=0):
@@ -46,4 +46,3 @@ func generate_system_map(coordinates: Array, cells: TileMap, terrain_set: int=0,
 			window.append(Vector2i(x, y))
 
 	cells.set_cells_terrain_connect(0,window,terrain_set,terrain,false)
-

@@ -1,7 +1,6 @@
 class_name astro_generators
 extends Node
 
-#@onready var objects = get_node()
 var agg: Array = []
 
 var system_sizes: Array = [
@@ -20,29 +19,25 @@ func _ready():
 	
 	universe = generate_universe(rng)
 
-
-func dice(rng: RandomNumberGenerator, max_eyes: int, min_eyes: int = 1) -> int:
-	return rng.randi_range(min_eyes, max_eyes)
-
 func generate_universe(rng):
-	var number_of_galaxies = dice(rng, 6, 1)
+	var number_of_galaxies = rng.randi_range(1, 6)
 	var galaxies = []
 	for galaxy in number_of_galaxies:
 		galaxies.append(generate_galaxy(rng))
-		
+
 	return {'galaxies': galaxies}
-		
+
 func generate_galaxy(rng):
-	var number_of_systems = dice(rng,4,2)
+	var number_of_systems = rng.randi_range(2, 4)
 	var systems = []
 	for system in number_of_systems:
 		systems.append(generate_system(rng))
-		
+
 	return {'systems': systems} 
-		
+
 func generate_system(rng):
-	var size = system_sizes[dice(rng,4,0)]
-	var number_of_bodies = dice(rng,floor(size[0]/2),4)
+	var size = system_sizes[rng.randi_range(0, 4)]
+	var number_of_bodies = rng.randi_range(4, size[0])
 	var bodies = []
 	for body in number_of_bodies:
 		bodies.append(generate_body(rng))
@@ -52,10 +47,10 @@ func generate_system(rng):
 		sum += body['resources']
 	
 	return {'system_size': size, 'system_resources': sum, 'bodies': bodies}
-		
+
 func generate_body(rng):
 	return {
 		"body_name": "name",
-		"object_type": dice(rng, 1,3),
-		"resources": dice(rng, 100,0)		
+		"object_type": rng.randi_range(1, 3),
+		"resources": rng.randi_range(0, 100)
 	}

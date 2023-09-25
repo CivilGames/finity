@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpovpdfy0wvl4"]
+[gd_scene load_steps=5 format=3 uid="uid://cpovpdfy0wvl4"]
 
 [ext_resource type="Script" path="res://scripts/universe/astro_system.gd" id="1_xtvjh"]
 [ext_resource type="TileSet" uid="uid://epfk5fvjsknk" path="res://assets/themes/space/astro_terrain.tres" id="2_x2j8m"]
 [ext_resource type="TileSet" uid="uid://faq65sqvo14e" path="res://assets/themes/space/scan_terrain.tres" id="3_myres"]
+[ext_resource type="PackedScene" uid="uid://2eboyjvy1h2t" path="res://scenes/universe/wormhole.tscn" id="4_undpw"]
 
 [node name="AstroSystem" type="Node2D" groups=["astro_systems"]]
 position = Vector2(-8, -16)
 script = ExtResource("1_xtvjh")
 
 [node name="fog" type="TileMap" parent="."]
+visible = false
 z_index = 1
 tile_set = ExtResource("2_x2j8m")
 format = 2
@@ -21,3 +23,5 @@ format = 2
 [node name="Space" type="Node2D" parent="."]
 
 [node name="Bodies" type="Node2D" parent="Space"]
+
+[node name="Wormhole" parent="Space" instance=ExtResource("4_undpw")]

@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c2r4uptk8evos"]
+
+[ext_resource type="Texture2D" uid="uid://r8t7h36h6c75" path="res://assets/textures/wormhole.png" id="1_uf4cl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w41oq"]
+texture = ExtResource("1_uf4cl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_w41oq")

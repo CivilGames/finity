@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://2eboyjvy1h2t"]
+
+[ext_resource type="Texture2D" uid="uid://b00quneera3rs" path="res://assets/textures/wormhole_1.png" id="1_b4w6u"]
+[ext_resource type="Script" path="res://scripts/universe/wormhole.gd" id="1_s7il3"]
+[ext_resource type="Texture2D" uid="uid://c05v4qnoex187" path="res://assets/textures/wormhole_2.png" id="2_qfjke"]
+[ext_resource type="Texture2D" uid="uid://ce3ccdk2d48vn" path="res://assets/textures/wormhole_3.png" id="3_jakfn"]
+[ext_resource type="Texture2D" uid="uid://dwvl1trhxm87m" path="res://assets/textures/wormhole_4.png" id="4_e8qka"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmpgb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b4w6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qfjke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jakfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e8qka")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Wormhole" type="Node2D"]
+position = Vector2(8, 8)
+script = ExtResource("1_s7il3")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pmpgb")
+frame_progress = 0.77615
+centered = false
